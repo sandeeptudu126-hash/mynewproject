@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: radial-gradient(circle at top, #1a1f35, #0f111a);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: white;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(45deg, #00f7ff, #ff00c8);
+    filter: blur(150px);
+    animation: move 8s infinite alternate;
+}
+
+@keyframes move {
+    0% { transform: translate(-100px, -100px); }
+    100% { transform: translate(100px, 100px); }
+}
+
+.container {
+    text-align: center;
+    z-index: 2;
+}
+
+h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+    background: linear-gradient(45deg, #00f7ff, #ff00c8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+p {
+    margin-bottom: 30px;
+    color: #bbb;
+}
+
+.btn {
+    padding: 12px 30px;
+    margin: 10px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.login-btn {
+    background: transparent;
+    border: 2px solid #00f7ff;
+    color: #00f7ff;
+}
+
+.login-btn:hover {
+    background: #00f7ff;
+    color: black;
+    box-shadow: 0 0 20px #00f7ff;
+}
+
+.signup-btn {
+    background: linear-gradient(45deg, #00f7ff, #ff00c8);
+    color: white;
+}
+
+.signup-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #ff00c8;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Welcome to My NeoApp</h1>
+    
+    <button class="btn login-btn" onclick="goLogin()">Login</button>
+    <button class="btn signup-btn" onclick="goSignup()">Sign Up</button>
+</div>
+
+<script>
+function goLogin() {
+    window.location.href = "login.html";
+}
+
+function goSignup() {
+    window.location.href = "signup.html";
+}
+</script>
+
+</body>
+</html>
